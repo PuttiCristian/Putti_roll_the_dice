@@ -16,5 +16,6 @@ class SecondActivity : AppCompatActivity() {
         var msg = intent.getStringExtra("MESSAGE")
         val textView = findViewById<TextView>(R.id.textView2_second_activity)
         textView.text = msg;
+
     }
 }
