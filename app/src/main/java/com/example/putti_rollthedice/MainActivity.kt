@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             val mioIntent : Intent = Intent(this, SecondActivity::class.java)
             val mioRandom = (1..6).random()
             mioIntent.putExtra("MESSAGE", "NUMERO ESTRATTO: $mioRandom" )
+            mioIntent.putExtra("RANDOM", mioRandom )
             startActivity(mioIntent)
         })
         }
