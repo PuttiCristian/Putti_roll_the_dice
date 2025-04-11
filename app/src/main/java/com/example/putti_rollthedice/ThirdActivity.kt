@@ -1,6 +1,8 @@
 package com.example.putti_rollthedice
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +13,20 @@ class ThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_third)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        var msg2 = intent.getStringExtra("MESSAGE2")
+        val textView = findViewById<TextView>(R.id.textView1ActivityThird)
+        textView.text = msg2;
+
+        var n = intent.getIntExtra("RANDOM", -1)
+        var str = ""
+        Log.d("valore", "$n")
+        if (n % 2 == 0) {
+           str="HAI PERSO"
+        } else {
+            str="HAI VINTO"
         }
-    }
+        val textView2 = findViewById<TextView>(R.id.textView2ActivityThird)
+        textView2.text = str;
+}
 }

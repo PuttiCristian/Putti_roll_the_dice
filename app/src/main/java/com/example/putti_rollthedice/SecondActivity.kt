@@ -1,14 +1,20 @@
 package com.example.putti_rollthedice
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SecondActivity : AppCompatActivity() {
+    private val TAG = "SecondActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,6 +35,15 @@ class SecondActivity : AppCompatActivity() {
             6 -> imageViewSecond.setImageResource(R.drawable.dice_face_6)
             else -> imageViewSecond.setImageResource(R.drawable.dices)
         }
-        Log.d("SECOND", "FINITO DISEGNO DADO")
+        val btnCheck : Button = findViewById(R.id.buttonActivityThird)
+        btnCheck.setOnClickListener(View.OnClickListener {
+            val toast2 = Toast.makeText(this, "controllo", Toast.LENGTH_LONG)
+            toast2.show()
+
+            val mioIntent2 : Intent = Intent(this, ThirdActivity::class.java)
+            mioIntent2.putExtra("MESSAGE2", "NUMERO ESTRATTO: $random" )
+            Log.d(TAG, random.toString())
+            startActivity(mioIntent2)
+        })
     }
 }
