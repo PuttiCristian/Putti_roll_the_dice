@@ -20,7 +20,6 @@ class ThirdActivity : AppCompatActivity() {
 
         var n = intent.getIntExtra("RANDOM", -1)
         var str = ""
-        Log.d("valore", "$n")
         if (n % 2 == 0) {
            str="HAI PERSO"
         } else {

@@ -42,6 +42,7 @@ class SecondActivity : AppCompatActivity() {
 
             val mioIntent2 : Intent = Intent(this, ThirdActivity::class.java)
             mioIntent2.putExtra("MESSAGE2", "NUMERO ESTRATTO: $random" )
+            mioIntent2.putExtra("RANDOM", random)
             Log.d(TAG, random.toString())
             startActivity(mioIntent2)
         })
