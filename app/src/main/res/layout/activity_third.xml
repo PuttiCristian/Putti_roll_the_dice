@@ -28,4 +28,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1ActivityThird" />
+
+    <ImageView
+        android:id="@+id/imageViewActivityThird"
+        android:layout_width="411dp"
+        android:layout_height="260dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1ActivityThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/perso" />
 </androidx.constraintlayout.widget.ConstraintLayout>
